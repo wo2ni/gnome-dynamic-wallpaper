@@ -3,6 +3,16 @@
 #### ;  
 你可以随意修改在发布,但请注明我的[→ Github地址](https://github.com/wo2ni)  
 
+
+
+# Shell中判断图片类型
+|        |             |            |
+|--------|-------------|------------|
+|jpg|png|gif|
+|ffd8ff|89504e47|47494638|
+
+
+
 ### 此Gnome桌面版本
 ####GNOME Shell 3.38.4
 - [→ 本人永久的Github地址](https://github.com/wo2ni)
