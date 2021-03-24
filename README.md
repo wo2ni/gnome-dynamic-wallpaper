@@ -1,5 +1,5 @@
-# 基于Arch Linux   
-#Gnome桌面动态壁纸配置生成程序;
+# Arch Linux 
+# Gnome桌面动态壁纸配置生成程序;
 
 #### ;  
 # Shell中判断图片类型
