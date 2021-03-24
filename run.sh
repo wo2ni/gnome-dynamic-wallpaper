@@ -16,8 +16,8 @@ Y_ellow="\033[1;33m"
 #--Cache;
 > /tmp/lun.txt > /dev/null 2>&1
 X='/tmp/lun.txt'        #壁纸索引临时文件;
-Image_file='/usr/share/backgrounds/gnome'      #自述壁纸路径;
-Image_readme='/usr/share/gnome-background-properties'      #描述自述壁纸的路径;
+Image_file='/usr/share/backgrounds/gnome'
+Image_readme='/usr/share/gnome-background-properties'
 readonly Image_file Image_readme X
 
 #--init初始;
@@ -64,7 +64,7 @@ Image_lun() {
     done
 }
 
-#--/usr/share/gnome-background-properties/*  #壁纸背景xml描述xml生成;
+#--/usr/share/gnome-background-properties/*
 Back_read() {
     cat << EOF > ${Image_readme}/${file_name}.xml
 <?xml version="1.0"?>
@@ -82,7 +82,7 @@ Back_read() {
 EOF
 }
 
-#--最后的首尾工作,xml剪裁;
+#--xml生成;
 Xml_cai() {
     for i in $(cat ${X})
     do
@@ -101,7 +101,7 @@ Xml_cai() {
     printf "</background>\n"
 }
 
-#--/usr/share/backgrounds/gnome/*  #壁纸xml文件生成;
+#--/usr/share/backgrounds/gnome/*
 Back_image() {
     #--Time Code;
     cat << EOF > ${Image_file}/${file_name}-image.xml
@@ -117,8 +117,8 @@ Back_image() {
 EOF
 #Image_lun
 Xml_cai >> ${Image_file}/${file_name}-image.xml
-xp="$(cat -n ${Image_file}/${file_name}-image.xml | grep  '<to></to>' | awk '{print $1}')"     #获取最后图片本该变0的行;
-sed -i "${xp}c$(printf "<to>`sed -n 1p ${X}`</to>\n")" ${Image_file}/${file_name}-image.xml    #最后的修改哈哈哈;
+xp="$(cat -n ${Image_file}/${file_name}-image.xml | grep  '<to></to>' | awk '{print $1}')"
+sed -i "${xp}c$(printf "<to>`sed -n 1p ${X}`</to>\n")" ${Image_file}/${file_name}-image.xml 
 }
 
 #--Root权限检测;
@@ -129,4 +129,5 @@ else
     clear
     printf "${Y_ellow}如何使用:${C_ls}\n"
     I_nit
+    rm -rf /tmp/lun.txt
 fi
