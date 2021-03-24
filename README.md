@@ -9,4 +9,8 @@
 
 ### 此Gnome桌面版本
 ### GNOME Shell 3.38.4
+
+### 效果
+![2021-03-24 21-17-01 的屏幕截图.png](https://i.loli.net/2021/03/24/Wyg1Eq2GYIRizUP.png)
+
 - [→ 本人永久的Github地址](https://github.com/wo2ni)
