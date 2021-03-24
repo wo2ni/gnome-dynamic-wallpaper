@@ -13,6 +13,6 @@
 
 
 ### 此Gnome桌面版本
-####GNOME Shell 3.38.4
+### GNOME Shell 3.38.4
 - [→ 本人永久的Github地址](https://github.com/wo2ni)
 - [→ Lua教程网址](http://www.runoob.com/lua/)
