@@ -43,7 +43,6 @@ I_nit() {
             readonly file_name switch_time filter_time
             Image_lun
             Back_read
-            #Xml_cai
             Back_image
         fi
     fi
@@ -93,7 +92,7 @@ Xml_cai() {
         printf "  <file>${i}</file>\n"
         printf "</static>\n"
         printf "<transition>\n"
-        printf "  <duration>5</duration>\n"
+        printf "  <duration>${switch_time}</duration>\n"
         printf "  <from>${i}</from>\n"
         ((a=$b+1));img="$(sed -n ${a}p ${X})"
         printf "  <to>${img}</to>\n"
@@ -116,10 +115,10 @@ Back_image() {
     <second>$(date "+%S")</second>
   </starttime>
 EOF
-    #Image_lun
-    Xml_cai >> ${Image_file}/${file_name}-image.xml
-    xp="$(cat -n ${Image_file}/${file_name}-image.xml | grep  '<to></to>' | awk '{print $1}')"     #获取最后图片本该变0的行;
-    sed -i "${xp}c$(printf "<to>`sed -n 1p ${X}`</to>\n")" ${Image_file}/${file_name}-image.xml    #最后的修改哈哈哈;
+#Image_lun
+Xml_cai >> ${Image_file}/${file_name}-image.xml
+xp="$(cat -n ${Image_file}/${file_name}-image.xml | grep  '<to></to>' | awk '{print $1}')"     #获取最后图片本该变0的行;
+sed -i "${xp}c$(printf "<to>`sed -n 1p ${X}`</to>\n")" ${Image_file}/${file_name}-image.xml    #最后的修改哈哈哈;
 }
 
 #--Root权限检测;
